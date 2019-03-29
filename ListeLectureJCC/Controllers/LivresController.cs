@@ -15,22 +15,15 @@ namespace ListeLectureJCC.Controllers
             return View();
         }
 
-        public ActionResult Detail(int id)
+        public  ActionResult Detail(int id)
         {
-            DetailModel model = ChargerDetailDepuisBDD(id);
+            DetailModel model = DataAccess.ChargerDetailDepuisBDD(id);
             return View(model);
 
-            //if (TryChargerDetailDepuisBDD(id, out DetailModel model))
-            //{
-            //    return View(model);
-            //}
-            //else
-            //{
-            //    return View("Erreur");
-            //}
+           
         }
 
-        private DetailModel ChargerDetailDepuisBDD(int idLivre)
+       /* private DetailModel ChargerDetailDepuisBDD(int idLivre)
         {
             using (SqlConnection connection = new SqlConnection(@"Server=.\SQLExpress;Database=ListeLecture;Integrated Security=true"))
             {
@@ -74,7 +67,7 @@ namespace ListeLectureJCC.Controllers
                 return model;
             }
         }
-
+        */
 
 
         private bool TryChargerDetailDepuisBDD(int idLivre, out DetailModel detailModel)
